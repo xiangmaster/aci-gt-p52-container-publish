@@ -1,0 +1,10 @@
+id: P52-E08
+repository: aci-gt-p52-container-publish
+visibility: public
+stage: P5
+rule: P5.2
+kind: experiment
+atomic_variable: "container publish task 消费输出"
+expected_status: REACHABLE
+setup: AUTO_FILES
+configuration_state: COMPLETE
