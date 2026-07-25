@@ -1,0 +1,14 @@
+name: Ground Truth P52-E08
+on:
+  workflow_dispatch:
+permissions:
+  packages: write
+jobs:
+  fixture:
+    runs-on: ubuntu-latest
+    if: ${{ false }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      AGENT_OUTPUT: ground-truth-agent-output
+    steps:
+      - run: tag=$(jq -r .tag agent-output.json); docker build -t ghcr.io/${{ github.repository }}:"$tag" .; docker push ghcr.io/${{ github.repository }}:"$tag"
